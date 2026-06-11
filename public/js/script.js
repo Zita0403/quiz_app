@@ -1,5 +1,3 @@
-console.log("Frontend");
-
 const nextBtn = document.getElementById("next-btn");
 const modal = document.querySelector(".custom-modal");
 const closeModalBtn = document.querySelector(".close-modal");
