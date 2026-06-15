@@ -4,9 +4,10 @@
 </div>
 <div class="quiz">
     <form id="quiz-form" method="post" action="/start">
-        <h1>Augusztus 20-a</h1>
-        <p>Ha készen állsz indítsd a kvízt!</p>
-        <button type="submit" id="start-btn" aria-label="Kvíz indítása">Kezdés</button>
+        <h1 id="quiz-title">Augusztus 20-a</h1>
+        <p id="quiz-desc">Ha készen állsz indítsd a kvízt!</p>
+        <button type="submit" id="start-btn" aria-labelledby="quiz-title" 
+                aria-describedby="quiz-desc">Kezdés</button>
     </form>
 </div>
 <%- include('partials/footer.ejs'); -%>

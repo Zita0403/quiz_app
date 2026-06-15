@@ -323,6 +323,13 @@ main {
     width: 100%;
 }
 
+#quiz-card > form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
 .answer {
     display: flex;
     flex-direction: column;
@@ -356,6 +363,7 @@ main {
 
 #finish-btn {
     width: auto;
+    text-decoration: none;
 }
 
 #start-btn:hover,

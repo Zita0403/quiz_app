@@ -5,23 +5,24 @@
 <div class="quiz">
     <div id="quiz-card">
         <form method="post" action="/next" >
-            <div class="question">
-                <p id="<%= question.id %>"><%= question.text %></p>
+            <div role="radiogroup" aria-labelledby="question-text">
+                <h2 id="question-text <%= question.id %>" class="question"><%= question.text %></h2>
+                <div class="answer">
+                    <% answers.forEach((a) => { %>
+                        <label class="custom-control-label" for="answer-<%= a.id %>">
+                            <input 
+                                type="radio" 
+                                class="custom-control-input" 
+                                id="<%= a.id %>" 
+                                name="answer" 
+                                value="<%= a.id %>"
+                            >
+                            <%= a.text %>
+                        </label>
+                    <% }) %>  
+                </div>
             </div>
-            <div class="answer">
-                <% answers.forEach((a) => { %>
-                    <label class="custom-control-label" for="answer-<%= a.id %>">
-                        <input 
-                            type="radio" 
-                            class="custom-control-input" 
-                            id="<%= a.id %>" 
-                            name="answer" 
-                            value="<%= a.id %>"
-                        >
-                        <%= a.text %>
-                    </label>
-                <% }) %>  
-            </div>
+
             <p id="score">Eddig megszerzett pontok: <%= totalScore%></p>
             <button type="submit" id="next-btn">Következő</button>
         </form>

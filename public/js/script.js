@@ -33,17 +33,23 @@ if (nextBtn) {
       return;
     }
 
-    document.querySelector(".question > p").textContent = data.question.text;
-
     const answersContainer = document.querySelector(".answer");
     answersContainer.innerHTML = "";
+    const question = document.querySelector(".question");
+    if (question) {
+        question.textContent = data.question.text;
+        question.setAttribute("aria-live", "polite");
+    }
+
     data.answers.forEach(a => {
-      const label = document.createElement("label");
-      label.innerHTML = `
-        <input type="radio" name="answer" value="${a.id}">
-        ${a.text}
-      `;
-      answersContainer.appendChild(label);
+        const label = document.createElement("label");
+        label.className = "custom-control-label";
+        label.setAttribute("for", "answer-" + a.id);
+        label.innerHTML = `
+            <input type="radio" class="custom-control-input" id="answer-${a.id}" name="answer" value="${a.id}">
+            ${a.text}
+        `;
+        answersContainer.appendChild(label);
     });
 
     document.getElementById("score").textContent = `Pontszám: ${data.totalScore}`;
