@@ -1,7 +1,7 @@
 {
   "name": "quiz_app",
   "version": "1.0.0",
-  "author": "Zita Lukács",
+  "author": "Lukács Zita",
   "description": "",
   "main": "index.js",
   "type": "module",
